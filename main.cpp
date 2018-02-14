@@ -130,21 +130,21 @@ double *sum3( double *p_a , double *p_b )
     return p_results;
 }
 
-// P7: Implement aboslute function that takes a double a and returns its absolute, 
+// P4: Implement aboslute function that takes a double a and returns its absolute, 
 // i.e if a is positive return as is, otherwise return -a. 
 double absolute( double a )
 {
 
 }
 
-// P4: Implement difference1 that takes two doubles a and b as inputs, and returns the absolute difference.
+// P5: Implement difference1 that takes two doubles a and b as inputs, and returns the absolute difference.
 // Hint: use absolute function you just implemented.
 double absolute_difference1( double a , double b )
 {
 
 }
 
-// P5: Implement difference2 that takes two pointers-to-doubles p_a and p_b as inputs, and retuns the results.
+// P6: Implement difference2 that takes two pointers-to-doubles p_a and p_b as inputs, and retuns the results.
 // Hint: Use dereferencing on pointers to access the variables on memory.
 // Hint: Use absolute function you implemented.
 double absolute_difference2( double *p_a , double *p_b )
@@ -152,7 +152,7 @@ double absolute_difference2( double *p_a , double *p_b )
 
 }
 
-// P6: Implement difference3 that takes two references-to-doubles a and b as inputs, and returns the results.
+// P7: Implement difference3 that takes two references-to-doubles a and b as inputs, and returns the results.
 // Hint: very simple (1 line needed)
 // Hint: use absolute function you implemented.
 double absolute_difference3( double &a , double &b )
