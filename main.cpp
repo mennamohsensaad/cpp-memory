@@ -87,7 +87,8 @@ double absolute_difference3( double &a , double &b )
 
 // P8 (Solved for you): Implement sumAndDifference1 that takes 4 arguments (two doubles and two pointers-to-doubles)
 // 1. Use dereferencing to modify the variable pointed to by pSum to hold the summation of a and b.
-// 2. Use dereferencing to modify the variables pointed to by pDiff to hold the absolute difference of a and b.  
+// 2. Use dereferencing to modify the variables pointed to by pDiff to hold the absolute difference of a and b.
+// Hint: use absolute function you implemented.  
 void sum_and_absolute_difference1( double a , double b , double *pSum , double *pDiff )
 {
     // Use dereferencing to modify the variable pointed to by pSum.
@@ -100,6 +101,7 @@ void sum_and_absolute_difference1( double a , double b , double *pSum , double *
 
 // P9: Implement sumAndDifference2 that takes 4 arguments (two doubles and two references to doubles)
 // Hint: Very simple, no pointers so dereferencing needed.
+// Hint: use absolute function you implemented.
 void sum_and_absolute_difference2( double a , double b , double &sum , double &diff )
 {
 
