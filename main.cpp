@@ -175,17 +175,17 @@ int main()
     double x = 50.0;
     double y = 100.0;
     swap1( &x , &y );
-    std::cout << "swapping (50.0,100.0) => (" << x << "," << y << ")" << std::endl;
+    std::cout << "swapping (50,100) => (" << x << "," << y << ")" << std::endl;
 
     double u = 0.0;
     double v = 8.0;
     swap2( u , v );
-    std::cout << "swapping (0.0,8.0) => (" << x << "," << y << ")" << std::endl;
+    std::cout << "swapping (0,8) => (" << u << "," << v << ")" << std::endl;
 
     double i = 3;
     double j = 7;
     swap3( i , j );
-    std::cout << "swapping (3,7) => (" << i << "," << j << ")" << std::endl;
+    std::cout << "swapping (3,7) => (" << i << "," << j << ") .... swap3 is very useless" << std::endl;
 
     return 0;
 }
