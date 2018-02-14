@@ -79,6 +79,7 @@ double absolute_difference2( double *p_a , double *p_b )
 
 // P6: Implement difference3 that takes two references-to-doubles a and b as inputs, and returns the results.
 // Hint: very simple (1 line needed)
+// Hint: use absolute function you implemented.
 double absolute_difference3( double &a , double &b )
 {
 
