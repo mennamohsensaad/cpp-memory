@@ -1,6 +1,81 @@
 #include <iostream> // Needed for std::cout
 #include <memory> // Needed for std::addressof
  
+
+// Questions start from line 79.
+
+// These are functions prototypes (declaration without definition).
+// We use function prototypes to inform the compiler that these functions
+// might be used before the compiler finds their definition (logic).
+void basicMemoryQuestions();
+double sum1( double a , double b );
+double *sum2( double a , double b );
+double *sum3( double *p_a , double *p_b ); 
+double absolute( double a );
+double absolute_difference1( double a , double b );
+double absolute_difference2( double *p_a , double *p_b );
+double absolute_difference3( double &a , double &b );
+void sum_and_absolute_difference1( double a , double b , double *pSum , double *pDiff );
+void sum_and_absolute_difference2( double a , double b , double &sum , double &diff );
+void swap1( double * p_a , double * p_b );
+void swap2( double &a , double &b );
+void swap3( double a , double b );
+
+
+int main()
+{
+    std::cout << "13 + 14  = " << sum1( 13 , 14 ) << std::endl;
+
+    double *px = sum2( 2 , 7 );
+    std::cout << "2 + 7 = " << *px << std::endl;
+    delete px;
+
+    double a3 = 11;
+    double b3 = 3;
+    double *py = sum3( &a3 , &b3 );
+    std::cout << "11 + 3 =" << *py << std::endl;
+    delete py;
+
+    std::cout << "|9.5| = " << absolute( 9.5 ) << std::endl;
+    std::cout << "|-12.5| = " << absolute( -12.5 ) << std::endl;
+
+    std::cout << "|13 - 14| = " << absolute_difference1( 13 , 14 ) << std::endl;
+
+    double a4 = 23;
+    double b4 = 12;
+    std::cout << "|23 - 12| = " << absolute_difference2( &a4 , &b4 );
+
+
+    std::cout << "|23 - 12| = " << absolute_difference3( a4 , b4 ) << std::endl;
+
+    double s = 0;
+    double d = 0;
+
+    sum_and_absolute_difference1( 50 , 48 , &s , &d );
+    std::cout << "50 + 48 = " << s << ", |50 - 48| = " << d << std::endl;
+
+    sum_and_absolute_difference2( 17 , 20 , s , d );
+    std::cout << "17 + 20 = " << s << ", |17 - 20| = " << d << std::endl;
+
+    double x = 50.0;
+    double y = 100.0;
+    swap1( &x , &y );
+    std::cout << "swapping (50,100) => (" << x << "," << y << ")" << std::endl;
+
+    double u = 0.0;
+    double v = 8.0;
+    swap2( u , v );
+    std::cout << "swapping (0,8) => (" << u << "," << v << ")" << std::endl;
+
+    double i = 3;
+    double j = 7;
+    swap3( i , j );
+    std::cout << "swapping (3,7) => (" << i << "," << j << ") .... swap3 is very useless" << std::endl;
+
+    return 0;
+}
+
+
 // P0: follow instructions inside this function
 void basicMemoryQuestions()
 {
@@ -134,58 +209,4 @@ void swap3( double a , double b )
     double temp_a = a;
     a = b;
     b = temp_a;
-}
-
-
-int main()
-{
-    std::cout << "13 + 14  = " << sum1( 13 , 14 ) << std::endl;
-
-    double *px = sum2( 2 , 7 );
-    std::cout << "2 + 7 = " << *px << std::endl;
-    delete px;
-
-    double a3 = 11;
-    double b3 = 3;
-    double *py = sum3( &a3 , &b3 );
-    std::cout << "11 + 3 =" << *py << std::endl;
-    delete py;
-
-    std::cout << "|9.5| = " << absolute( 9.5 ) << std::endl;
-    std::cout << "|-12.5| = " << absolute( -12.5 ) << std::endl;
-
-    std::cout << "|13 - 14| = " << absolute_difference1( 13 , 14 ) << std::endl;
-
-    double a4 = 23;
-    double b4 = 12;
-    std::cout << "|23 - 12| = " << absolute_difference2( &a4 , &b4 );
-
-
-    std::cout << "|23 - 12| = " << absolute_difference3( a4 , b4 ) << std::endl;
-
-    double s = 0;
-    double d = 0;
-
-    sum_and_absolute_difference1( 50 , 48 , &s , &d );
-    std::cout << "50 + 48 = " << s << ", |50 - 48| = " << d << std::endl;
-
-    sum_and_absolute_difference2( 17 , 20 , s , d );
-    std::cout << "17 + 20 = " << s << ", |17 - 20| = " << d << std::endl;
-
-    double x = 50.0;
-    double y = 100.0;
-    swap1( &x , &y );
-    std::cout << "swapping (50,100) => (" << x << "," << y << ")" << std::endl;
-
-    double u = 0.0;
-    double v = 8.0;
-    swap2( u , v );
-    std::cout << "swapping (0,8) => (" << u << "," << v << ")" << std::endl;
-
-    double i = 3;
-    double j = 7;
-    swap3( i , j );
-    std::cout << "swapping (3,7) => (" << i << "," << j << ") .... swap3 is very useless" << std::endl;
-
-    return 0;
 }
