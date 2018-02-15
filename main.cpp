@@ -1,6 +1,6 @@
 #include <iostream> // Needed for std::cout 
 
-// Questions start from line 79.
+// Questions start from line 77.
 
 // These are functions prototypes (declaration without definition).
 // We use function prototypes to inform the compiler that these functions
