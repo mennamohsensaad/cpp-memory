@@ -104,7 +104,7 @@ double sum1( double a , double b )
 
 // P2: Implement sum2 that takes a and b as inputs, 
 // then creates summation results on the heap, and returns the address of the results on the heap.
-// Hint: creating variables on heap already returns the address, so no need to use std::addressof function here.
+// Hint: creating variables on heap already returns the address, so no need to use ambersand operator (&) here.
 double *sum2( double a , double b )
 {
 
@@ -112,7 +112,7 @@ double *sum2( double a , double b )
 
 // P3 (Solved for you): Implement sum3 that takes two pointers-to-doubles p_a and p_b as inputs,
 // then creates the summation on the heap, and returns the address of the results on the heap.
-// Hint1: creating variables on heap already returns the address, so no need to use std::addressof function here.
+// Hint1: creating variables on heap already returns the address, so no need to use ambersand operator (&) here.
 // Hint2: Use dereferencing on pointers to access the variables on memory.
 double *sum3( double *p_a , double *p_b )
 {
