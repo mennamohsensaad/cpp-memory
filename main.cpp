@@ -41,7 +41,7 @@ int main()
 
     double a4 = 23;
     double b4 = 12;
-    std::cout << "|23 - 12| = " << absolute_difference2( &a4 , &b4 );
+    std::cout << "|23 - 12| = " << absolute_difference2( &a4 , &b4 )<< std::endl;
 
 
     std::cout << "|23 - 12| = " << absolute_difference3( a4 , b4 ) << std::endl;
@@ -79,27 +79,27 @@ void basicMemoryQuestions()
 {
     // Declare and initialize an integer h with 0, on stack.
 
-
+int h=0;
     // Declare and initialize an integer x with 0, on stack.
 
-
+int x=0;
     // Declare and initialize a pointer-to-integer p_x and initialize it with address of x.
 
-
+int *px=&x;
     // Modify x using its address in p_x, modify it to 12 (use dereferencing).
-
+*px=12;
 
     // Create a double on heap with initializing it to zero, then hold its address in pointer-to-double p_m.
-
+double *p_m=new double (0);
 
     // Now we are exiting this function, don't forget to delete the variable you just created on heap.
-    
+    delete  p_m ;
 }
 
 // P1: Implement sum1 that takes a and b as inputs, and returns the summation directly.
 double sum1( double a , double b )
 {
-
+return a+b;
 }
 
 // P2: Implement sum2 that takes a and b as inputs, 
@@ -107,6 +107,11 @@ double sum1( double a , double b )
 // Hint: creating variables on heap already returns the address, so no need to use ambersand operator (&) here.
 double *sum2( double a , double b )
 {
+ double sum=a+b;
+ double *presults= new double (0);
+ *presults=sum ;
+ return presults;
+ delete presults;
 
 }
 
@@ -132,14 +137,18 @@ double *sum3( double *p_a , double *p_b )
 // i.e if a is positive return as is, otherwise return -a. 
 double absolute( double a )
 {
-
+if (a>=0)
+{return a;}
+else 
+{return -a;}
 }
 
 // P5: Implement difference1 that takes two doubles a and b as inputs, and returns the absolute difference.
 // Hint: use absolute function you just implemented.
 double absolute_difference1( double a , double b )
 {
-
+double diff =absolute (a-b);
+return diff;
 }
 
 // P6: Implement difference2 that takes two pointers-to-doubles p_a and p_b as inputs, and retuns the results.
@@ -147,6 +156,7 @@ double absolute_difference1( double a , double b )
 // Hint: Use absolute function you implemented.
 double absolute_difference2( double *p_a , double *p_b )
 {
+absolute (*p_a-*p_b);
 
 }
 
@@ -155,7 +165,7 @@ double absolute_difference2( double *p_a , double *p_b )
 // Hint: use absolute function you implemented.
 double absolute_difference3( double &a , double &b )
 {
-
+ double results=absolute (a-b);
 }
 
 // P8 (Solved for you): Implement sum_and_absolute_difference1 that takes 4 arguments (two doubles and two pointers-to-doubles)
@@ -177,7 +187,8 @@ void sum_and_absolute_difference1( double a , double b , double *pSum , double *
 // Hint: use absolute function you implemented.
 void sum_and_absolute_difference2( double a , double b , double &sum , double &diff )
 {
-
+sum =a+b;
+diff=absolute (a-b);
 }
 
 // P10: Swap is very important function that we will use extensively when studying algorithms this semester.
@@ -187,7 +198,10 @@ void sum_and_absolute_difference2( double a , double b , double &sum , double &d
 // Hint3: Think of swap as exchanging the liquids in two glasses, so you would need a third glass to do the job.
 // Hint4: 3 lines are enough.
 void swap1( double * p_a , double * p_b )
-{
+{ 
+double y=*p_a;
+*p_a=*p_b;
+*p_b=y;
 
 }
 
@@ -196,12 +210,14 @@ void swap1( double * p_a , double * p_b )
 // Hint2: 3 lines are enough.
 void swap2( double &a , double &b )
 {
-
+double y=a;
+a=b;
+b=y;
 }
 
 // P12: this function is implemented. It seems that this function exchanges the variables a and b.
 // However, unlike swap1 and swap2, swap3 is useless, Can you explain why?!
-// Your explanation: 
+// Your explanation: because we did not use pointer of dereferencing or references  
 void swap3( double a , double b )
 {
     double temp_a = a;
